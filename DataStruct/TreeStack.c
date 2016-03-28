@@ -63,7 +63,7 @@ int GetStackTop(Stack *s, BiTree **data)
     return 1;
 }
 
-//判栈空
+// 判栈空
 int IsEmptyStack(Stack *s)
 {
     if (s->top == -1) {
