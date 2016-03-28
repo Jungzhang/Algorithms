@@ -68,7 +68,7 @@ void PostOrder(BiTree *root)
     }
 }
 
-//非递归先序
+// 非递归先序
 void Pre_Order(BiTree *root)
 {
     Stack *s = InitStack();
