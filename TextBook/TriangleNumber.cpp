@@ -10,7 +10,7 @@
 #include <vector>
 #include <climits>
 
-//递归+记忆法Lintcode 36ms
+//递归 + 记忆法Lintcode 36ms
 /*class Solution {
 public:
     int longestOfPath(std::vector<std::vector<int>> &nums, int i, int j) {
