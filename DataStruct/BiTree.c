@@ -12,7 +12,7 @@
 
 #include "BiTree.h"
 
-//通过一行字符串创建树
+// 通过一行字符串创建树
 BiTree *CreatBiTree(void)
 {
     char ch;
