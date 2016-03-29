@@ -3,7 +3,7 @@
 	> Author: Jung
 	> Mail: jungzhang@xiyoulinux.org  or  zhanggen.jung@gmail.com
 	> Created Time: 2016年04月12日 星期二 19时31分18秒
-	> Description:  三角形数字阵列,
+	> Description:  三角形数字阵列,求从顶点到底边的最大路经
  ************************************************************************/
 #include <iostream>
 #include <cstdlib>
