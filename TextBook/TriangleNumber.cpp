@@ -3,7 +3,7 @@
 	> Author: Jung
 	> Mail: jungzhang@xiyoulinux.org  or  zhanggen.jung@gmail.com
 	> Created Time: 2016年04月12日 星期二 19时31分18秒
-	> Description:
+	> Description:  三角形数字阵列,
  ************************************************************************/
 #include <iostream>
 #include <cstdlib>
