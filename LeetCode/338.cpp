@@ -16,9 +16,10 @@ class Solution {
 public:
     std::vector<int> countBits(int num) {
         int count, tmp;
+        //消去所有的1
         for (int i = 0; i <= num; ++i) {
             for (count = 0, tmp = i; tmp; ++count) {
-                tmp = tmp & (tmp - 1);
+                tmp = tmp & (tmp - 1);  //每次消去数字中的一个1,因为n是由n - 1 + 1得到的
             }
             v.push_back(count);
         }
