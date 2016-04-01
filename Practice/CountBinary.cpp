@@ -27,7 +27,7 @@ unsigned int func2(int num)
     unsigned int count;
 
     for (count = 0; num; ++count) {
-        num = num & (num - 1);
+        num = num & (num - 1);      //n = (n - 1) + 1,所以和n - 1进行与运算之后会去掉一个1
     }
 
     return count;
