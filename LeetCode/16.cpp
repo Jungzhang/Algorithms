@@ -125,6 +125,7 @@ public:
 
 int main(int argc, char *argv[])
 {
+    Solution s;
     
     return EXIT_SUCCESS;
 }
