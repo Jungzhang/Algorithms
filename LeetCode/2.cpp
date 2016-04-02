@@ -15,6 +15,7 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
+//类似于大整数相加的链表版
 class Solution {
 public :
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
