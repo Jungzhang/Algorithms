@@ -80,6 +80,11 @@ int main(int argc, char *argv[])
 {
     std::vector<int> a;
     Solution s;
+    int tmp;
+    while(true) {
+        std::cin >> tmp;
+        a.push_back(tmp);
+    }
     std::cout << s.maxArea(a) << std::endl;
     
     return EXIT_SUCCESS;
