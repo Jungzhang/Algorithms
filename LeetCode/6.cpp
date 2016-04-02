@@ -40,7 +40,7 @@ public:
 
 int main(int argc, char *argv[])
 {
-    std::string a = "ABCD";
+    std::string a = "ABCDEFGHI";
     Solution s;
     std::cout << s.convert(a, 3) << std::endl;
     
