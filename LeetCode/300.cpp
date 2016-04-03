@@ -3,7 +3,9 @@
 	> Author: Jung
 	> Mail: jungzhang@xiyoulinux.org  or  zhanggen.jung@gmail.com
 	> Created Time: 2016年03月30日 星期三 09时04分46秒
-	> Description:
+	> Description: 求数组中最长递增子序列的长度，
+    如序列[10, 9, 2, 5, 3, 7, 101, 18]，则最长递增子序列是[2, 3, 7, 101]，
+    所以程序返回4。要求O（nlogn）的时间复杂度。
  ************************************************************************/
 #include <iostream>
 #include <cstdlib>
