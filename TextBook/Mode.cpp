@@ -15,7 +15,8 @@ void ModeOfMap(int num[], int n, int &mode, int &weight)
     mode = 0;
     weight = 0;
 
-    //使用map容器
+    //使用map容器的特性,如果在容器中则自增一次
+    //否则添加一次
     for (int i = 0; i < n; ++i) {
         ++m[num[i]];
     }
