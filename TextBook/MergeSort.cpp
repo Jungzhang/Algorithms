@@ -77,7 +77,7 @@ void MergeSort(int num[], int n)
             Merge(num, v[i], v[i + 1], v[i + 2]);
         }
         v.clear();
-        group = divide(num, v, n);   //每循环一次都分割一次
+        group = divide(num, v, n);   // 每循环一次都分割一次
     }
 
 }
