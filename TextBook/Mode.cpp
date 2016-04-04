@@ -15,7 +15,7 @@ void ModeOfMap(int num[], int n, int &mode, int &weight)
     mode = 0;
     weight = 0;
 
-    //
+    //使用map容器
     for (int i = 0; i < n; ++i) {
         ++m[num[i]];
     }
