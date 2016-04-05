@@ -8,7 +8,7 @@
 #include <iostream>
 #include <cstdlib>
 
-//暴力解法
+//暴力解法,枚举所有情况
 void NumCount1(int number, int result[])
 {
     for (int i = 1; i <= number; ++i) {
