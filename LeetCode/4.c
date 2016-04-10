@@ -45,9 +45,9 @@ double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Si
 {
     int sum = nums1Size + nums2Size;
 
-    if (sum & 0x01) { //奇数
+    if (sum & 0x01) { //奇数个
         return findKth(nums1, nums1Size, nums2, nums2Size, sum / 2 + 1);
-    } else { //偶数
+    } else { //偶数个
         return (findKth(nums1, nums1Size, nums2, nums2Size, sum / 2 + 1) + findKth(nums1, nums1Size, nums2, nums2Size, sum / 2)) / 2.0;
     }
 
