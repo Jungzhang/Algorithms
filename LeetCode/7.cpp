@@ -15,6 +15,7 @@ public:
     int reverse(int x) {
         long result = 0; //用long来存储最终的结果
         
+        //翻转整数
         while (x) {
             result = result * 10 + (x % 10);
             x /= 10;
