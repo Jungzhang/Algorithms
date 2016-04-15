@@ -14,20 +14,27 @@ class Solution {
 public:
     std::vector<std::vector<int>> fourSum(std::vector<int>& nums, int target) {
         std::vector<std::vector<int>> result;
-        std::vector<int> tmp(4);
         const int size = nums.size();
         int i = 0, j, k, m = size - 1;;
         
-        if (size == 0 || size < 4) {
+        if (size < 4) {
             return result;
         }
         sort(nums.begin(), nums.end());
         
-        while(i < m - 2) {
-            tmp[0] = nums[i];
-            ++i;
-            while(i < m -2 && nums[i] == nums[i - 1]) {
-                ++i;
+        while (i < m - 2) {
+            j = i + 1;
+            int sum1 = target - nums[i];
+            while (j < m -1) {
+
+                while (k < m) {
+                    int sum2 = nums[j] + nums[k];
+                    if (sum2 == target) {
+                        result.push_back({nums[i], nums[j], nums[k]});
+                    } else if (sum2 < target) {
+                        
+                    }
+                }
             }
         }
         
