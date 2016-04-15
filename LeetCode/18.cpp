@@ -25,30 +25,6 @@ public:
         
         while(i < m - 2) {
             tmp[0] = nums[i];
-            for (j = i + 1; i < m - 1; ) {
-                for (k = j + 1; k < m; ) {
-                    tmp[1] = nums[j];
-                    if (int sum = (nums[i] + nums[j] + nums[k] + nums[m]) == target) {
-                        tmp[2] = nums[k]; ++k;
-                        tmp[3] = nums[m]; --m;
-                        result.push_back(tmp);
-                        while(k < m && nums[k] == nums[k - 1]) {
-                            ++k;
-                        }
-                        while(k < m && nums[m] == nums[m + 1]) {
-                            --m;
-                        }
-                    } else if (sum < target) {
-                        ++k;
-                    } else {
-                        --m;
-                    }
-                }
-                ++j;
-                while(j < m - 1 && nums[j] == nums[j - 1]) {
-                    ++j;
-                }
-            }
             ++i;
             while(i < m -2 && nums[i] == nums[i - 1]) {
                 ++i;
