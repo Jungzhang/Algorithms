@@ -28,9 +28,6 @@ public:
             if (tmp == '(' || tmp == '{' || tmp == '[') {
                 v.push_back(tmp);
             } else if (tmp == ')' || tmp == ']' || tmp == '}') {
-                if (!v.size()) {
-                    return false;
-                }
                 const char t = *(v.end() - 1);
                 if ((tmp == ')' && t == '(') || (tmp == ']' && t == '[') || (tmp == '}' && t == '{')) {
                     v.pop_back();
