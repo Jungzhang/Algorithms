@@ -31,12 +31,27 @@ public:
                 return false;
             }
         }
-        if (v.empty())
-            return true;
-        else {
-            return false;
+        return v.empty();
+    };
+    /*
+    bool isValid(string s) {
+        
+        stack<char> pare;
+        
+        for(auto c:s){
+            if(c=='(' || c=='{' || c=='['){
+                pare.push(c);
+            }else{
+                if(pare.empty()) return false;
+                
+                if(c-pare.top()>2) return false;
+                //becasue in Ascii, (:40, ):41, [:91, ]:93, {:123, }:125
+                pare.pop();
+            }
         }
+        return pare.empty();
     }
+    */
 };
 
 int main(int argc, char *argv[])
