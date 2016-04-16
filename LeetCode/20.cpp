@@ -7,38 +7,31 @@
  ************************************************************************/
 #include <iostream>
 #include <cstdlib>
-#include <vector>
+#include <stack>
 
 class Solution {
 public:
     bool isValid(std::string s) {
         const int size = s.size();
-        std::vector<char> v;
+        std::stack<char> v;
         
         if (size % 2) {
             return false;
         } else if (size == 0) {
             return true;
-        } else if (s[0] == ']' || s[0] == ')' || s[0] == '}') {
-            return false;
         }
         
         for (int i = 0; i < size; ++i) {
             const char tmp = s[i];
             if (tmp == '(' || tmp == '{' || tmp == '[') {
-                v.push_back(tmp);
-            } else if (tmp == ')' || tmp == ']' || tmp == '}') {
-                const char t = *(v.end() - 1);
-                if ((tmp == ')' && t == '(') || (tmp == ']' && t == '[') || (tmp == '}' && t == '{')) {
-                    v.pop_back();
-                } else {
-                    return false;
-                }
-            }else {
+                v.push(tmp);
+            } else if ((!v.empty()) && ((tmp == ')' && v.top() == '(') || (tmp == ']' && v.top() == '[') || (tmp == '}' && v.top() == '{'))) {
+                v.pop();
+            } else {
                 return false;
             }
         }
-        if (!v.size())
+        if (v.empty())
             return true;
         else {
             return false;
