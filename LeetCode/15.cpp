@@ -60,15 +60,15 @@ public:
     std::vector<std::vector<int> > threeSum(std::vector<int> &num) 
 	{
 	    sort(num.begin(), num.end());
-	    int i=0, j=0, k=num.size()-1;
+	    int i=0, j=0, k = num.size()-1;
 	    int num1 = 0;
         std::vector<int> tmp(3);
         std::vector<std::vector<int> > result;
         
-	    for (; i < k-1; ) {  //i < k - 1,因为i是第一个较小的数字,所以必须小于大数的下标,因为是3个数,所以是i < k - 1
-	    	num1 = 0-num[i];
+	    while (i < k-1) {  //i < k - 1,因为i是第一个较小的数字,所以必须小于大数的下标,因为是3个数,所以是i < k - 1
+	    	num1 = 0 - num[i];
 	    	tmp[0] = num[i];
-	    	for (j = i+1, k=num.size()-1; j < k;  ) {
+	    	for (j = i+1, k = num.size()-1; j < k;  ) {
 	    		if (num[j] + num[k] == num1) {
 	    			tmp[1] = num[j]; ++j;
 	    			tmp[2] = num[k]; --k;
