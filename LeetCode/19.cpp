@@ -17,24 +17,25 @@ struct ListNode {
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
-        ListNode *pTemp = new ListNode(-1);
-        ListNode *p = pTemp;
-        pTemp->next = head;
-        int i = 0;
+        ListNode *pTemp = head;
+        ListNode *hash[1000] = {nullptr};
+        int len = 0;
         
-        while (i < n - 1 && pTemp != NULL) {
-            ++i;
+        while (pTemp) {
+            hash[len] = pTemp;
             pTemp = pTemp->next;
+            ++len;
         }
         
-        if (i == n - 1) {
-            ListNode *tmp = pTemp->next;
-            if (tmp) {
-                pTemp->next = tmp->next;
-                delete(tmp);
-            }
+        int tar = len - n;
+        
+        delete(hash[tar]);
+        
+        if (tar == 0) {
+            head = hash[tar + 1];
+        } else {
+            hash[tar - 1]->next = hash[tar + 1];
         }
-        delete(p);
         
         return head;
     }
