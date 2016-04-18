@@ -54,20 +54,31 @@ public:
         }
         
         //剩余节点
-        while (pTemp1) {
+        if (pTemp1) {
             pTemp3->next = pTemp1;
-            pTemp3 = pTemp1;
-            pTemp1 = pTemp1->next;
-        }
-        
-        while (pTemp2) {
+        }else if (pTemp2) {
             pTemp3->next = pTemp2;
-            pTemp3 = pTemp2;
-            pTemp2 = pTemp2->next;
         }
         
         return l3;
     }
+/*
+    ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+        if (l1 == NULL) {
+            return l2;
+        }
+        if (l2 == NULL) {
+            return l1;
+        }
+        if (l1->val <= l2->val) {
+            l1->next = mergeTwoLists(l1->next, l2);
+            return l1;
+        } else {
+            l2->next = mergeTwoLists(l1, l2->next);
+            return l2;
+        }
+    }
+*/
 };
 
 int main(int argc, char *argv[])
