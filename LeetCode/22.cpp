@@ -42,7 +42,7 @@ public:
         return;
     }
 private:
-    void addBrackets(int left, int right, std::string s, std::vector<std::string> &result)
+    /*void addBrackets(int left, int right, std::string s, std::vector<std::string> &result)
     {
         if (left == 0 && right == 0) {
             result.push_back(s);
@@ -62,7 +62,7 @@ private:
                 addBrackets(left, right - 1, tmp, result);
             }
         }
-    }
+    } */
 };
 
 int main(int argc, char *argv[])
