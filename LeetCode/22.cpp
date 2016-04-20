@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <vector>
 
+//大体思路就是要保证左半括号个数大于等于右半括号
 class Solution {
 public:
     /*std::vector<std::string> generateParenthesis(int n) {
@@ -22,27 +23,30 @@ public:
         
         return result;
     }*/
+    
+    //思想也是保证左半括号个数大于等于右半括号个数
     std::vector<std::string> generateParenthesis(int n) {
         std::string s;
-        std::vector<std::string> v;
-        generate(n, n, s, v);
-        return v;
+        std::vector<std::string> result;
+        generate(n, n, s, result);
+        return result;
     }
-    void generate(int left, int right, std::string s, std::vector<std::string> &v){
+
+    void generate(int left, int right, std::string s, std::vector<std::string> &result){
         if(left){
-            generate(left - 1, right, s + "(", v);
-            if(left != right){
-                generate(left, right - 1, s + ")", v);
+            generate(left - 1, right, s + "(", result); //如果左半括号还没有用完直接加左半括号
+            if(left != right){    //如果左右不相等
+                generate(left, right - 1, s + ")", result);    //加右半括号
             }
         }else{
-            if(right){
-                v.push_back(s + std::string(right,')'));
+            if(right){   //如果还剩右括号没有加入则将剩余的所有右括号都加入
+                result.push_back(s + std::string(right,')'));
             }
         }
         return;
     }
 private:
-    /*void addBrackets(int left, int right, std::string s, std::vector<std::string> &result)
+    void addBrackets(int left, int right, std::string s, std::vector<std::string> &result)
     {
         if (left == 0 && right == 0) {
             result.push_back(s);
@@ -50,19 +54,16 @@ private:
         }
         
         if (left == right) {
-            std::string tmp = s + "(";
-            addBrackets(left - 1, right, tmp, result);
+            addBrackets(left - 1, right, s + "(", result);
         } else {
             if (left > 0) {
-                std::string tmp = s + "(";
-                addBrackets(left - 1, right, tmp, result);
+                addBrackets(left - 1, right, s + "(", result);
             }
             if (right > 0) {
-                std::string tmp = s + ")";
-                addBrackets(left, right - 1, tmp, result);
+                addBrackets(left, right - 1, s + ")", result);
             }
         }
-    } */
+    }
 };
 
 int main(int argc, char *argv[])
