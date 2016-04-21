@@ -58,7 +58,18 @@ public:
         }
         
         return head;
-    } */
+    } 
+    //换指针递归版
+    ListNode* swapPairs(ListNode* head) {
+        ListNode* p1;       
+        if(head && head->next){  
+            p1 = head->next; 
+            head->next = swapPairs(head->next->next);
+            p1->next = head;
+            head = p1; 
+       }
+       return head;
+    }*/
 
     ListNode* swapPairs(ListNode* head) {
         return head;
