@@ -34,7 +34,7 @@ public:
         
         return head;
     }
-    
+    */
     //换指针
     ListNode* swapPairs(ListNode* head) {
         ListNode *p1 = head, *p2, *tmp;
@@ -60,7 +60,7 @@ public:
         return head;
     } 
     //换指针递归版
-    ListNode* swapPairs(ListNode* head) {
+    /*ListNode* swapPairs(ListNode* head) {
         ListNode* p1;       
         if(head && head->next){  
             p1 = head->next; 
@@ -70,10 +70,6 @@ public:
        }
        return head;
     }*/
-
-    ListNode* swapPairs(ListNode* head) {
-        return head;
-    }
 };
 
 int main(int argc, char *argv[])
