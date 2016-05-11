@@ -11,14 +11,24 @@
 #include <vector>
 #include <algorithm>
 
+
 struct activity {
     unsigned int start;
     unsigned int end;
     bool flag = true;
 };
 
+/*
+struct activity {
+    unsigned int time;
+    bool type;
+    bool flag = true;
+};
+*/
+
 class Solution {
-    int numOfHall(std::vector<activity> acts)
+public:
+    int numOfHall(std::vector<activity> &acts)
     {
         int count = 0;
         const int size = acts.size();
@@ -33,9 +43,7 @@ class Solution {
         while (tmp) {
             int end = -1;
             for (int i = 0; i < size; ++i) {
-                if (acts[i].flag && end == -1) {
-                    end = acts[i].end;
-                } else if (acts[i].flag && acts[i].end >= acts[end].end) {
+                if ((acts[i].flag && end == -1) || (acts[i].flag && acts[i].start >= acts[end].end)) {
                     end = i;
                 } else {
                     continue;
@@ -52,6 +60,19 @@ class Solution {
 
 int main(int argc, char *argv[])
 {
+    std::vector<activity> acts;
+    activity tmp;
+    int count;
+    std::cin >> count;
+    Solution s;
 
+    while (count) {
+        std::cin >> tmp.start >> tmp.end;
+        acts.push_back(tmp);
+        --count;
+    }
+
+    std::cout << s.numOfHall(acts) << std::endl;
+    
     return EXIT_SUCCESS;
 }
